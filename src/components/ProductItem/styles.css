@@ -1,0 +1,40 @@
+.WrapperDiv {
+  display: flex;
+}
+
+.WrapperImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-selft: center;
+  border: 2px solid #dbdada;
+  width: 130px;
+  height: 130px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.Image {
+  width: 110px;
+  overflow: hidden;
+}
+
+.WrapperDetails {
+  margin-left: 25px;
+}
+
+.Name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.OldPrice {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #bdbdbd;
+}
+
+.Price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
