@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { BackButton } from "../../components/BackButton";
+import { Modal } from "../../components/Modal";
 import { Panel } from "../../components/Panel";
 import { ProductItem } from "../../components/ProductItem";
+import "./styles.css";
 
 function Over() {
   // FETCHING DATA
-  const [data, setData] = useState([]);
+  const [, setData] = useState([]);
+  const [open, setOpen] = useState(false);
   const jsonData = require("./over.json");
   const fetchData = jsonData.items;
 
@@ -24,12 +26,39 @@ function Over() {
   const minValue = 10;
 
   const isShipping = totalValue / 100 >= minValue;
-  console.log(isShipping);
+
+  const body = (
+    <div className="WrapperBody">
+      <div className="WrapperTitle">
+        <span className="TitleModal">
+          Seu pedido foi finalizado com sucesso!
+        </span>
+      </div>
+      <div className="WrapperNotice">
+        <span className="NoticeModal">
+          Clique abaixo para receber seu cupom de frete grátis
+        </span>
+      </div>
+
+      <div className="WrapperButton">
+        <button className="ButtonModal" onClick={() => setOpen(false)}>
+          Receber cupom
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div>
       <BackButton />
-      <Panel value={totalValue / 100} notice={isShipping}>
+      <Modal show={open} onClose={() => setOpen(false)}>
+        {body}
+      </Modal>
+      <Panel
+        value={totalValue / 100}
+        notice={isShipping}
+        onClick={() => setOpen(true)}
+      >
         {fetchData.map((item) => (
           <>
             <ProductItem

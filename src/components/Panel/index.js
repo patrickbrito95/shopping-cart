@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-export const Panel = ({ children, value, notice }) => {
+export const Panel = ({ children, value, notice, onClick }) => {
   return (
     <div className="Panel">
       <div className="WrapperTitle">
@@ -22,7 +22,9 @@ export const Panel = ({ children, value, notice }) => {
         </div>
       </div>
       <div className="WrapperButton">
-        <button className="Button">Finalizar Compra</button>
+        <button className="Button" onClick={onClick}>
+          Finalizar Compra
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { BackButton } from "../../components/BackButton";
+import { Modal } from "../../components/Modal";
 import { Panel } from "../../components/Panel";
 import { ProductItem } from "../../components/ProductItem";
+import "./styles.css";
 
 function Under() {
   // FETCHING DATA
-  const [data, setData] = useState([]);
+  const [, setData] = useState([]);
+  const [open, setOpen] = useState(false);
   const jsonData = require("./under.json");
   const fetchData = jsonData.items;
 
@@ -18,17 +21,39 @@ function Under() {
 
   useEffect(() => {
     setData(fetchData);
-    console.log(data);
   }, []);
 
   const minValue = 10;
 
   const isShipping = totalValue / 100 >= minValue;
 
+  const body = (
+    <div className="WrapperBody">
+      <div className="WrapperTitle">
+        <span className="TitleModal">
+          Seu pedido foi finalizado com sucesso!
+        </span>
+      </div>
+
+      <div className="WrapperButton">
+        <button className="ButtonModal" onClick={() => setOpen(false)}>
+          Ok
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <BackButton />
-      <Panel value={totalValue / 100} notice={isShipping}>
+      <Modal show={open} onClose={() => setOpen(false)}>
+        {body}
+      </Modal>
+      <Panel
+        value={totalValue / 100}
+        notice={isShipping}
+        onClick={() => setOpen(true)}
+      >
         {fetchData.map((item) => (
           <>
             <ProductItem

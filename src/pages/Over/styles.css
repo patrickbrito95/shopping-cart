@@ -1,0 +1,50 @@
+.WrapperBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.WrapperTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.TitleModal {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.WrapperNotice {
+  display: flex;
+  justify-content: center;
+}
+
+.NoticeModal {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.WrapperButton {
+  display: flex;
+  justify-content: center;
+}
+
+.ButtonModal {
+  background-color: #3b74f2;
+  border: none;
+  border-radius: 7px;
+  width: 70%;
+  padding: 10px 20px 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.Button:hover {
+  filter: brightness(0.9);
+  color: white;
+}
