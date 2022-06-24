@@ -22,7 +22,7 @@ export const Panel = ({ children, value, notice }) => {
         </div>
       </div>
       <div className="WrapperButton">
-        <button>Finalizar Compra</button>
+        <button className="Button">Finalizar Compra</button>
       </div>
     </div>
   );

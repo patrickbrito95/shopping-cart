@@ -20,21 +20,24 @@
 }
 
 .WrapperDetails {
-  margin-left: 25px;
+  margin-left: 10px;
 }
 
 .Name {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
+  margin-top: 35px;
 }
 
 .OldPrice {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 13px;
   color: #bdbdbd;
 }
 
 .Price {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  margin-top: -10px;
 }

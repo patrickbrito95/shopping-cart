@@ -1,3 +1,40 @@
 .App {
-  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.WrapperTitle {
+  margin-bottom: 50px;
+}
+
+.Title {
+  font-family: "Poppins", sans-serif;
+}
+
+.WrapperOptions {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.Options {
+  background-color: #3b74f2;
+  border: none;
+  border-radius: 7px;
+  width: 100%;
+  padding: 20px 50px 20px 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.Options:hover {
+  filter: brightness(0.9);
+  color: white;
 }
